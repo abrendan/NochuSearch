@@ -1,12 +1,9 @@
 from flask import Flask, render_template, request
-import requests  # Import the requests library
+import requests
 import os
 
 app = Flask(__name__)
 
-# Replace 'your_api_key' with your actual Google Custom Search JSON API key
-# Replace 'your_search_engine_id' with your actual search engine id obtained
-# from your custom search engine configuration on Google
 GOOGLE_API_KEY = os.environ['GOOGLEAPI']
 GOOGLE_CX = os.environ['GOOGLEID']
 
@@ -22,7 +19,7 @@ def search():
         return render_template('index.html')
 
     start_index = (page - 1) * 10 + 1
-    # Build the Google Custom Search API request URL
+
     search_url = "https://www.googleapis.com/customsearch/v1"
     params = {
         'key': GOOGLE_API_KEY,
@@ -31,30 +28,30 @@ def search():
         'start': start_index
     }
 
-    # Issue a request to the Google API
     response = requests.get(search_url, params=params)
     search_results = []
     if response.status_code == 200:
         search_data = response.json()
 
-        # Extract the search results
         items = search_data.get('items', [])
         for item in items:
+            # Extract thumbnail if available, often found in `item['pagemap']['cse_thumbnail'][0]['src']`
+            thumbnail = item.get('pagemap', {}).get('cse_thumbnail', [{}])[0].get('src', '/path-to-default-thumbnail.jpg')
+
             search_results.append({
                 'title': item.get('title'),
                 'link': item.get('link'),
-                'snippet': item.get('snippet')
+                'snippet': item.get('snippet'),
+                'thumbnail': thumbnail  # Add this line to include the thumbnail URL
             })
 
         total_results = int(search_data.get('searchInformation', {}).get('totalResults', 0))
         total_pages = (total_results + 9) // 10
 
     else:
-        # In a production environment, you should handle response errors appropriately.
         print(f"Error: {response.status_code}")
 
-    return render_template('results.html', query=query,
-                           search_results=search_results, page=page, total_pages=total_pages)
+    return render_template('results.html', query=query, search_results=search_results, page=page, total_pages=total_pages)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)

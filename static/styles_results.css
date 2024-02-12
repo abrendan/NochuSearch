@@ -40,12 +40,23 @@ h1 {
 }
 
 .result-item {
-  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background for frosted effect */
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
   margin-bottom: 10px;
-  padding: 1rem; /* Reduced padding to make result items smaller */
-  border-radius: 10px; /* Rounded corners */
+  padding: 1rem;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-size: 0.9rem; /* Reduced font size for better clarity */
+  font-size: 0.9rem;
+}
+.result-thumbnail {
+  margin-right: 1rem; /* Add space between image and text */
+  width: 100px; /* Fixed width or your preference */
+  height: auto; /* Keep aspect ratio */
+  border-radius: 5px; /* Optional: if you want rounded corners for thumbnails */
+}
+.result-content {
+  flex: 1; /* Allows the content to fill the remainder of the space */
 }
 
 .result-title {
@@ -61,4 +72,36 @@ h1 {
 
 .result-snippet {
   color: #545454;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.search-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+}
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Rounded corners left side */
+  outline: none;
+}
+.search-button {
+  padding: 0.5rem 1rem;
+  background-color: #1a0dab;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0; /* Rounded corners right side */
+  font-size: 1rem;
+  text-align: center;
+}
+.search-button:hover {
+  background-color: #0f0c7b; /* Darker shade on hover */
 }

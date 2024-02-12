@@ -3,19 +3,27 @@
 <head>
   <meta charset="utf-8">
   <title>Search Results</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles_results.css') }}"> <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_results.css') }}">
 </head>
 <body>
   <div class="container">
     <h1>Search Results</h1>
-    <a href="/" class="search-link">New Search</a>
+    <div class="search-container">
+      <form action="/search" method="get" class="search-form">
+        <input type="text" name="query" required class="search-input" placeholder="Search again...">
+        <button type="submit" class="search-button">&#x1F50D;</button>
+      </form>
+    </div>
     <ul class="results-list">
       {% for result in search_results %}
-        <li class="result-item">
+      <li class="result-item">
+        <img src="{{ result.thumbnail }}" alt="Thumbnail" class="result-thumbnail">
+        <div class="result-content">
           <h2><a href="{{ result.link }}" class="result-title">{{ result.title }}</a></h2>
           <p class="result-snippet">{{ result.snippet }}</p>
           <a href="{{ result.link }}" class="result-link">{{ result.link }}</a>
-        </li>
+        </div>
+      </li>
       {% endfor %}
     </ul>
   </div>
