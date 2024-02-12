@@ -1,0 +1,64 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url('background-image.jpg'); /* Replace with your actual image path */
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7); /* Frosted glass effect */
+}
+
+h1 {
+  text-align: center;
+}
+
+.search-link {
+  display: block;
+  background: #555;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 20px auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px; /* Rounded corners for link */
+  width: fit-content;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+.result-item {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent background for frosted effect */
+  margin-bottom: 10px;
+  padding: 1rem; /* Reduced padding to make result items smaller */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem; /* Reduced font size for better clarity */
+}
+
+.result-title {
+  color: #1a0dab;
+  text-decoration: none;
+  font-size: 1.1rem; /* Adjust title font size if needed */
+}
+
+.result-link {
+  color: #006621;
+  text-decoration: none;
+}
+
+.result-snippet {
+  color: #545454;
+}
