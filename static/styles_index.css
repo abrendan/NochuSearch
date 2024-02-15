@@ -1,0 +1,110 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Adding a pseudo-element to the body to create the blurred background effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.search-page-container {
+  text-align: center;
+  padding-top: 10%;
+  position: relative; /* Position relative to place it above the blurred background */
+  z-index: 1;
+}
+
+.main-heading {
+  font-size: 4em;
+  font-family: "Playfair Display", sans-serif;
+  margin-bottom: 2em;
+  color: #000000;
+}
+
+.sub-heading {
+  font-size: 1em;
+  margin-bottom: 2em;
+  color: #000000; /* Change the color if required for better visibility */
+}
+
+.search-form {
+  margin: auto;
+  width: fit-content;
+}
+
+.search-input {
+  padding: 0.5em;
+  margin-right: -4px; /* To prevent double borders */
+  border: 1px solid #ccc;
+  border-right: none;
+  font-size: 1em;
+  line-height: 1em;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #000000;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #8a8a8a;
+  border: 1px solid #8a8a8a;
+}
+
+.footer {
+  text-align: center;
+  padding: 0.5rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text-left,
+.footer-text-middle,
+.footer-text-right {
+  margin: 0;
+  padding: 0 10px; /* Add padding as needed */
+  color: #000000; /* Or any color as per your footer text color */
+  flex: 1;
+  text-align: center; /* Center align the text */
+}
+.footer-text-left {
+  text-align: left;
+}
+.footer-text-right {
+  text-align: right;
+}
+
+.footer-link {
+  color: inherit; /* This ensures that the link color is the same as the normal text color */
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+

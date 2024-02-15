@@ -3,7 +3,7 @@ body {
   background-image: url('background-image.jpg'); /* Replace with your actual image path */
   background-size: cover;
   background-attachment: fixed;
-  color: #333;
+  color: #000000;
   line-height: 1.6;
 }
 
@@ -15,7 +15,7 @@ body {
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.7); /* Frosted glass effect */
+  background-color: rgba(255, 255, 255, 0.2); /* Frosted glass effect */
 }
 
 h1 {
@@ -94,14 +94,15 @@ h1 {
 }
 .search-button {
   padding: 0.5rem 1rem;
-  background-color: #1a0dab;
+  background-color: #000000;
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 0 5px 5px 0; /* Rounded corners right side */
   font-size: 1rem;
   text-align: center;
+  transition: background-color 0.3s ease;
 }
 .search-button:hover {
-  background-color: #0f0c7b; /* Darker shade on hover */
+  background-color: #8a8a8a; /* Darker shade on hover */
 }

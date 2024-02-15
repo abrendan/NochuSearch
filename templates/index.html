@@ -3,13 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>Nochu</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_index.css') }}">
 </head>
 <body>
-  <h1>Welcome to Nochu</h1>
-  <p>Yet another search engine.</p>
-  <form action="/search" method="get">
-    <input type="text" name="query" required>
-    <button type="submit">Search</button>
-  </form>
+  <div class="search-page-container">
+    <h1 class="main-heading">Welcome to Nochu</h1>
+    <p class="sub-heading">Yet another de-googled search engine using Google's Search API.</p>
+    <form class="search-form" action="/search" method="get">
+      <input class="search-input" type="text" name="query" required>
+      <button class="search-button" type="submit">Search</button>
+    </form>
+  </div>
+  <footer class="footer">
+    <p class="footer-text-left">&copy; 2023 Nochu Search by abrendan</p>
+    <p class="footer-text-middle"><a href="https://www.abrendan.dev" class="footer-link">abrendan.dev</a></p>
+    <p class="footer-text-right"><a href="https://www.pexels.com/de-de/foto/kalt-schnee-strasse-dammerung-6469507/" class="footer-link">Background image by Karolina Kot</a></p>
+  </footer>
 </body>
 </html>
