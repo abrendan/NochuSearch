@@ -132,4 +132,10 @@ h1 {
   font-size: 0.9rem;
 }
 
+.navigation-button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  width: auto; /* Allow the width to auto-adjust based on content */
+  border-radius: 6px;
+}
 

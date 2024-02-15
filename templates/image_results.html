@@ -24,6 +24,16 @@
         </div>
       {% endfor %}
     </div>
+    <div class="navigation-buttons">
+      {% if page > 1 %}
+        <button onclick="location.href='{{ url_for('search_images', query=query, page=1) }}'" class="search-button navigation-button">First</button>
+        <button onclick="location.href='{{ url_for('search_images', query=query, page=page-1) }}'" class="search-button navigation-button">&#60; Prev</button>
+      {% endif %}
+
+      {% if page < total_pages %}
+        <button onclick="location.href='{{ url_for('search_images', query=query, page=page+1) }}'" class="search-button navigation-button">Next &#62;</button>
+      {% endif %}
+    </div>
   </div>
 </body>
 </html>

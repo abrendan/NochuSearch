@@ -35,14 +35,13 @@ def search():
 
         items = search_data.get('items', [])
         for item in items:
-            # Extract thumbnail if available, often found in `item['pagemap']['cse_thumbnail'][0]['src']`
             thumbnail = item.get('pagemap', {}).get('cse_thumbnail', [{}])[0].get('src', '/path-to-default-thumbnail.jpg')
 
             search_results.append({
                 'title': item.get('title'),
                 'link': item.get('link'),
                 'snippet': item.get('snippet'),
-                'thumbnail': thumbnail  # Add this line to include the thumbnail URL
+                'thumbnail': thumbnail
             })
 
         total_results = int(search_data.get('searchInformation', {}).get('totalResults', 0))
@@ -93,7 +92,6 @@ def search_images():
         print(f"Error: {response.status_code}")
 
     return render_template('image_results.html', query=query, image_results=image_results, page=page, total_pages=total_pages)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
