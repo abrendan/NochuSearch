@@ -30,13 +30,13 @@ def search():
 
     response = requests.get(search_url, params=params)
     search_results = []
+    total_pages = 0
     if response.status_code == 200:
         search_data = response.json()
-
         items = search_data.get('items', [])
+
         for item in items:
             thumbnail = item.get('pagemap', {}).get('cse_thumbnail', [{}])[0].get('src', '/path-to-default-thumbnail.jpg')
-
             search_results.append({
                 'title': item.get('title'),
                 'link': item.get('link'),
@@ -45,8 +45,7 @@ def search():
             })
 
         total_results = int(search_data.get('searchInformation', {}).get('totalResults', 0))
-        total_pages = (total_results + 9) // 10
-
+        total_pages = max((total_results + 9) // 10, 1)  # Make sure at least one page is shown
     else:
         print(f"Error: {response.status_code}")
 
@@ -73,9 +72,9 @@ def search_images():
 
     response = requests.get(search_url, params=params)
     image_results = []
+    total_pages = 0
     if response.status_code == 200:
         search_data = response.json()
-
         items = search_data.get('items', [])
         for item in items:
             image = item.get('link', '/path-to-default-image.jpg')
@@ -86,7 +85,7 @@ def search_images():
             })
 
         total_results = int(search_data.get('searchInformation', {}).get('totalResults', 0))
-        total_pages = (total_results + 9) // 10
+        total_pages = max((total_results + 9) // 10, 1)  # Make sure at least one page is shown
 
     else:
         print(f"Error: {response.status_code}")
