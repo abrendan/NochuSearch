@@ -9,9 +9,11 @@
   <div class="container">
     <h1>Search Results</h1>
     <div class="search-container">
+      <!-- Search form with added image search button -->
       <form action="/search" method="get" class="search-form">
-        <input type="text" name="query" required class="search-input" placeholder="Search again...">
+        <input type="text" name="query" value="{{ query }}" required class="search-input" placeholder="Search again...">
         <button type="submit" class="search-button">&#x1F50D;</button>
+        <button type="submit" formaction="/search/images" class="image-search-button">Pictures</button>
       </form>
     </div>
     <ul class="results-list">
