@@ -107,4 +107,20 @@ body::before {
   text-decoration: underline;
 }
 
+.image-search-button {
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #fff;
+  border: 1px solid #000000;
+  margin-left: 8px; /* Spacing between buttons */
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+.image-search-button:hover {
+  background-color: #6e6e6e;
+  border: 1px solid #8a8a8a;
+}
+
 
