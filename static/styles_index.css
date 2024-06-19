@@ -113,6 +113,7 @@ body::before {
   color: #fff;
   border: 1px solid #000000;
   margin-left: 8px; /* Spacing between buttons */
+  margin-top: 8px;
   cursor: pointer;
   border-radius: 6px;
   font-size: 1rem;
@@ -121,6 +122,51 @@ body::before {
 .image-search-button:hover {
   background-color: #6e6e6e;
   border: 1px solid #8a8a8a;
+}
+
+.browser-ad-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.browser-ad-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.browser-ad-description {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.browser-download-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.browser-download-button:hover {
+  background-color: #8a8a8a;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .main-heading {
+        font-size: 2em; /* Reduce font size to ensure text fits without needing to scroll */
+    }
 }
 
 
